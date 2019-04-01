@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+    h2 Login
+    if failed 
+        .alert.alert-danger.
+            That doesn't work, please try again.
+    form(method='POST')
+        .col-4.col-md
+        .col-8.col-md
+            .form-group
+                label Username
+                input.form-control(name='username', type='username', required, placeholder='Enter username')
+            .form-group
+                label Password
+                input.form-control(name='password', type='password', required, placeholder='Password')
+            button.btn.btn-primary(type='submit') Login
+            a.btn.btn-link(href='/register', role='button') Create a new account

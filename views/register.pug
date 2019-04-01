@@ -1,0 +1,21 @@
+extends layout.pug
+
+block content
+    h2 Register
+    if failed 
+        .alert.alert-danger
+            each error in errors
+                    li=error
+    form(method='POST')
+        .col-4.col-md
+        .col-8.col-md
+            .form-group
+                label Username
+                input.form-control(name='username', type='username', required, placeholder='Enter username')
+            .form-group
+                label Password
+                input.form-control(name='password', type='password', required, minlength="8", placeholder='Password')
+            .form-group
+                label Confirm Password
+                input.form-control(name='confirm', type='password', required, minlength="8", placeholder='Confirm Password')
+            button.btn.btn-primary(type='submit') Create Account
